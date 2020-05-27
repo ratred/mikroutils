@@ -19,6 +19,5 @@ ma <options> [user]@<mikrotik_address>
 # Планы
 
  - Сделать опцию которая копирует на микротик конфиг и выполняет:
+ 
    system reset-configuration no-defaults=yes skip-backup=yes run-after-reset=flash/$config_file
-
- - Сделать опцию, которая меняет пароль админу
