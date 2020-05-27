@@ -9,10 +9,16 @@ ma <options> [user]@<mikrotik_address>
 
 	Options:
 
-		--setadmpwd <pwd>   - Устанавливает пароль pwd пользователю admin
-		--copyid <user>     - Заводит на микротике пользователя user, добавляет в группу full,
+		--copyid <user>     - Работает, как ssh-copy-id, только с микротиком
+		                      Заводит на микротике пользователя user, добавляет в группу full,
 		                      копирует ~/.ssh/rsa.id и экспортирует в пользователя
 		--getconfig         - Скачивает конфиг в текстовом виде
-		--putconfig <file>  - Закачивает file, сбрасывает конфиг и устанавливает 
-		                      выполнить file после сброса
-		--verbose           - Устанавливает вывод отладочной информации
+		--admpass <pass>    - Меняет пароль админа на pass
+
+
+# Планы
+
+ - Сделать опцию которая копирует на микротик конфиг и выполняет:
+   system reset-configuration no-defaults=yes skip-backup=yes run-after-reset=flash/$config_file
+
+ - Сделать опцию, которая меняет пароль админу
